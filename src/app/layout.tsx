@@ -6,8 +6,8 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Orbita AI | Always-On AI Support for a Global Customer Base",
-  description: "Global chat assistant that keeps your business in orbit with seamless communication, instant responses, and smarter support across 30+ languages.",
+  title: "Ukaelr | Premium Global AI Solutions",
+  description: "Ukaelr provides intelligent, seamless communication, instant responses, and smarter support across 30+ languages.",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-[#03080c] text-white min-h-screen`}>
+      <body className={`${inter.className} bg-blue-950 text-white min-h-screen selection:bg-blue-500/30 selection:text-white`}>
         <Navbar />
         {children}
       </body>
