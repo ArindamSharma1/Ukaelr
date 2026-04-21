@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 export default function Hero() {
   return (
     <section className="relative w-full pt-40 pb-20 overflow-hidden flex flex-col items-center justify-center min-h-screen">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/10 via-transparent to-transparent -z-10" />
+
       
       <div className="container px-4 md:px-6 flex flex-col items-center text-center z-10">
         <motion.div 
@@ -52,26 +52,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* The glowing planet/globe at the bottom of the hero */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-        className="relative w-full max-w-5xl h-[40vh] md:h-[60vh] mt-20"
-      >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] md:w-[1200px] h-[800px] md:h-[1200px] rounded-full globe-glow blur-3xl opacity-60 -z-10" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] md:w-full h-full bg-gradient-to-t from-[#020b22] via-transparent to-transparent z-10" />
-        <div 
-          className="w-[150%] left-[-25%] md:w-[120%] md:left-[-10%] relative h-[200%] border-t border-cyan-500/40 rounded-t-[100%] mt-32"
-          style={{
-            background: 'radial-gradient(ellipse at top, rgba(0, 229, 255, 0.2) 0%, rgba(2, 11, 34, 0) 50%)',
-            boxShadow: 'inset 0 20px 60px rgba(0, 229, 255, 0.15), 0 -10px 40px rgba(0, 85, 255, 0.2)'
-          }}
-        >
-          {/* Faux texture for the planet surface */}
-          <div className="absolute inset-0 opacity-15 bg-[url('https://transparenttextures.com/patterns/stardust.png')]" />
-        </div>
-      </motion.div>
+
 
       {/* Logos section - overlapping the dark fade from the globe */}
       <motion.div 

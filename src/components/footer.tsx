@@ -4,7 +4,7 @@
 
 export default function Footer() {
   return (
-    <footer className="w-full relative z-10 border-t border-white/10 bg-[#01091f] pt-20 pb-10">
+    <footer className="w-full relative z-10 border-t border-white/10 pt-20 pb-10">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           <div className="col-span-2 lg:col-span-2">

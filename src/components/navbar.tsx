@@ -13,7 +13,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between px-6 py-3 rounded-full bg-[#020b22]/80 backdrop-blur-md border border-white/10 shadow-lg">
         <Link href="/" className="flex items-center py-1">
-          <img src="/ukaelr-logo.png" alt="Ukaelr Logo" className="h-7 w-auto" />
+          <img src="/ukaelr-logo.png" alt="Ukaelr Logo" className="h-7 w-auto mix-blend-screen" />
         </Link>
         
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
