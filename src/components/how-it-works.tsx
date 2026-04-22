@@ -83,13 +83,13 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center text-center mb-16"
         >
-          <div className="px-4 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-gray-400 mb-6 uppercase tracking-wider">
+          <div className="px-4 py-1 rounded-full border border-[#0D9488]/15 bg-[#0D9488]/5 text-xs text-[#0D9488] mb-6 uppercase tracking-wider font-medium">
             Our Services
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-6">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-[#1B2A3D]">
             Full-Spectrum Industrial Solutions
           </h2>
-          <p className="text-gray-400 max-w-2xl text-lg">
+          <p className="text-[#6B7C8E] max-w-2xl text-lg">
             From plant machinery to global expansion — nine key domains that power Ukaelr&apos;s mission of industrial excellence.
           </p>
         </motion.div>
@@ -105,17 +105,17 @@ export default function HowItWorks() {
             <motion.div
               variants={itemVariants}
               key={i}
-              className="glass-card rounded-2xl p-7 flex flex-col gap-4 group hover:-translate-y-1 hover:border-cyan-400/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,229,255,0.12)] cursor-default"
+              className="glass-card rounded-2xl p-7 flex flex-col gap-4 group hover:-translate-y-1 hover:border-[#0D9488]/25 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(13,148,136,0.08)] cursor-default"
             >
               <div className="flex items-center gap-4">
-                <div className={`flex items-center justify-center w-11 h-11 rounded-xl border bg-[#020b22] shrink-0 transition-all duration-500 group-hover:scale-110 shadow-lg ${i === 0 ? 'text-cyan-400 border-cyan-500/30 shadow-[0_0_15px_rgba(0,229,255,0.15)]' : 'border-white/10 text-gray-400 group-hover:text-cyan-400 group-hover:border-cyan-500/30'}`}>
+                <div className={`flex items-center justify-center w-11 h-11 rounded-xl border bg-[#F7F3EB] shrink-0 transition-all duration-500 group-hover:scale-110 shadow-sm ${i === 0 ? 'text-[#0D9488] border-[#0D9488]/25 shadow-[0_0_12px_rgba(13,148,136,0.1)]' : 'border-[#0D9488]/10 text-[#8896A6] group-hover:text-[#0D9488] group-hover:border-[#0D9488]/25'}`}>
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-medium text-white group-hover:text-cyan-100 transition-colors duration-300">
+                <h3 className="text-lg font-medium text-[#1B2A3D] group-hover:text-[#0F766E] transition-colors duration-300">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed pl-[60px]">
+              <p className="text-[#8896A6] text-sm leading-relaxed pl-[60px]">
                 {service.description}
               </p>
             </motion.div>
