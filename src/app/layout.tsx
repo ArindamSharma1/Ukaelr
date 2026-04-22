@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/custom-cursor";
 import Navbar from "@/components/navbar";
+import ScrollToTop from "@/components/scroll-to-top";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.className} bg-[#2E3665] text-[#A8B0D8] min-h-screen selection:bg-[#6E8CFB]/30 selection:text-[#E0E4FF] md:cursor-none`}>
         <CustomCursor />
+        <ScrollToTop />
         <Navbar />
         {children}
       </body>
