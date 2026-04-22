@@ -32,7 +32,7 @@ export default function Pricing() {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }} className="flex flex-col gap-6">
             <div className="glass-card rounded-3xl p-8 border border-[#636CCB]/12 flex flex-col gap-6">
               <h3 className="text-xl font-semibold text-[#E0E4FF]">Get In Touch Directly</h3>
-              {[{ icon: <Mail className="w-5 h-5 text-[#6E8CFB]" />, label: "Email Us", value: "contact@ukaelr.com" },{ icon: <Phone className="w-5 h-5 text-[#6E8CFB]" />, label: "Call Us", value: "+91 XXXXX XXXXX" },{ icon: <MapPin className="w-5 h-5 text-[#6E8CFB]" />, label: "Registered Office", value: "India" }].map((c, i) => (
+              {[{ icon: <Mail className="w-5 h-5 text-[#6E8CFB]" />, label: "Email Us", value: "ukaelr1010@gmail.com" },{ icon: <Phone className="w-5 h-5 text-[#6E8CFB]" />, label: "Call Us", value: "+91 93174 04881" },{ icon: <MapPin className="w-5 h-5 text-[#6E8CFB]" />, label: "Registered Office", value: "Vikasnagar, Darhui, Hamirpur, H.P, India" }].map((c, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-xl bg-[#3C467B] border border-[#636CCB]/15 flex items-center justify-center shrink-0">{c.icon}</div>
                   <div><p className="text-sm text-[#7A82B0] mb-1">{c.label}</p><p className="text-[#E0E4FF] font-medium">{c.value}</p></div>
