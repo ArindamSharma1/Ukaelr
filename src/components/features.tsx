@@ -59,19 +59,19 @@ export default function Features() {
                 <button className="w-full sm:w-auto px-8 py-3 rounded-full btn-primary text-sm flex items-center justify-center gap-2 font-bold shadow-xl">Partner With Us <ArrowRight className="w-4 h-4" /></button>
               </div>
             </div>
-            <div className="w-full md:w-1/2 relative h-[200px] sm:h-[250px] flex items-center justify-center mt-4 md:mt-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#636CCB]/10 to-[#6E8CFB]/10 blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 transform scale-90 sm:scale-110 md:scale-125 opacity-80 group-hover:scale-[1.05] sm:group-hover:scale-[1.3] transition-transform duration-700">
+            <div className="w-full md:w-1/2 relative h-[200px] sm:h-[250px] flex items-center justify-center mt-4 md:mt-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#636CCB]/15 to-[#6E8CFB]/15 blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 transform scale-90 sm:scale-110 md:scale-125 opacity-90 group-hover:scale-[1.05] sm:group-hover:scale-[1.25] transition-transform duration-700 relative z-10">
                 {[
-                  { l: "HQ", s: "India", c: "bg-[#636CCB]/15 border-[#636CCB]/30" },
-                  { l: "R&D", s: "Labs", c: "bg-[#6E8CFB]/10 border-[#6E8CFB]/30" },
-                  { l: "MFG", s: "Plants", c: "bg-[#50589C]/20 border-[#50589C]/40" },
-                  { l: "IP", s: "Legal", c: "bg-[#636CCB]/15 border-[#636CCB]/30" },
-                  { l: "OPS", s: "Logistics", c: "bg-[#6E8CFB]/10 border-[#6E8CFB]/30" },
-                  { l: "BIZ", s: "Global", c: "bg-[#50589C]/20 border-[#50589C]/40" },
+                  { l: "HQ", s: "India", c: "bg-[#636CCB]/20 border-[#636CCB]/30" },
+                  { l: "R&D", s: "Labs", c: "bg-[#6E8CFB]/15 border-[#6E8CFB]/30" },
+                  { l: "MFG", s: "Plants", c: "bg-[#50589C]/25 border-[#50589C]/40" },
+                  { l: "IP", s: "Legal", c: "bg-[#636CCB]/20 border-[#636CCB]/30" },
+                  { l: "OPS", s: "Logistics", c: "bg-[#6E8CFB]/15 border-[#6E8CFB]/30" },
+                  { l: "BIZ", s: "Global", c: "bg-[#50589C]/25 border-[#50589C]/40" },
                 ].map((item, i) => (
-                  <div key={i} className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center shadow-2xl border ${item.c} backdrop-blur-sm transition-all duration-300`}>
-                    <span className="text-[#E0E4FF] font-black text-sm sm:text-base">{item.l}</span>
+                  <div key={i} className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex flex-col items-center justify-center border ${item.c} backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_15px_40px_rgba(110,140,251,0.2)]`}>
+                    <span className="text-[#E0E4FF] font-black text-sm sm:text-base tracking-tight">{item.l}</span>
                     <span className="text-[#A8B0D8] text-[8px] sm:text-[10px] mt-1 font-bold uppercase tracking-widest">{item.s}</span>
                   </div>
                 ))}

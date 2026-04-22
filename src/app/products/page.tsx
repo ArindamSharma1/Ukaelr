@@ -1,10 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 import Link from "next/link"
 import { ArrowLeft, ShoppingBag, Star, Eye, X, ArrowRight, Shield, Clock, Gem } from "lucide-react"
 import { useState } from "react"
-import { AnimatePresence } from "framer-motion"
 
 const watches = [
   {
@@ -70,12 +69,12 @@ const watches = [
 
 const categories = ["All", "Dress", "Skeleton", "Chronograph", "Diver", "Tourbillon"]
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } }
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 80, damping: 20 } }
 }
@@ -102,7 +101,7 @@ export default function ProductsPage() {
       <section className="w-full pt-32 pb-16 relative">
         <div className="container px-4 md:px-6 mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#A8B0D8] hover:text-[#6E8CFB] transition-colors mb-8 group">
+            <Link href="/" className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#A8B0D8] hover:text-[#6E8CFB] transition-colors mb-6 sm:mb-8 group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Back to Home
             </Link>
@@ -110,18 +109,18 @@ export default function ProductsPage() {
           
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#636CCB]/20 bg-[#636CCB]/10 text-sm text-[#6E8CFB] mb-6">
-                <ShoppingBag className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#636CCB]/20 bg-[#636CCB]/10 text-[10px] sm:text-xs text-[#6E8CFB] mb-4 sm:mb-6 uppercase tracking-widest font-bold">
+                <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Exotic Collection</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-semibold text-[#E0E4FF] mb-4">Our Timepieces</h1>
-              <p className="text-[#A8B0D8] text-lg max-w-xl">Each watch in our collection is curated for those who appreciate the artistry of precision engineering and timeless design.</p>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#E0E4FF] mb-4 leading-tight">Our Timepieces</h1>
+              <p className="text-[#A8B0D8] text-base sm:text-lg max-w-xl leading-relaxed">Each watch in our collection is curated for those who appreciate the artistry of precision engineering and timeless design.</p>
             </div>
-            <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#3C467B]/50 border border-[#636CCB]/10">
-              <Star className="w-5 h-5 text-[#6E8CFB]" />
+            <div className="flex items-center gap-3 px-5 py-4 rounded-3xl bg-[#3C467B]/40 border border-[#636CCB]/15 backdrop-blur-sm shadow-xl">
+              <Star className="w-5 h-5 text-[#6E8CFB] fill-[#6E8CFB]/20" />
               <div>
-                <p className="text-[#E0E4FF] font-medium text-sm">{watches.length} Timepieces</p>
-                <p className="text-[#7A82B0] text-xs">Curated Collection</p>
+                <p className="text-[#E0E4FF] font-bold text-sm leading-none mb-1">{watches.length} Pieces</p>
+                <p className="text-[#7A82B0] text-[10px] uppercase tracking-wider font-bold">Curated Collection</p>
               </div>
             </div>
           </motion.div>
@@ -129,17 +128,17 @@ export default function ProductsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="w-full pb-8">
+      <section className="w-full pb-8 sm:pb-12">
         <div className="container px-4 md:px-6 mx-auto">
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-wrap gap-3">
+          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="flex flex-wrap gap-2.5 sm:gap-3">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 border ${
                   activeCategory === cat
-                    ? 'bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-[#E0E4FF] shadow-[0_4px_15px_rgba(99,108,203,0.3)]'
-                    : 'bg-[#3C467B]/40 border border-[#636CCB]/12 text-[#A8B0D8] hover:border-[#6E8CFB]/30 hover:text-[#E0E4FF]'
+                    ? 'bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-[#E0E4FF] border-transparent shadow-[0_4px_20px_rgba(99,108,203,0.4)]'
+                    : 'bg-[#3C467B]/30 border-[#636CCB]/15 text-[#A8B0D8] hover:border-[#6E8CFB]/40 hover:text-[#E0E4FF]'
                 }`}
               >
                 {cat}
@@ -157,7 +156,7 @@ export default function ProductsPage() {
             initial="hidden"
             animate="visible"
             key={activeCategory}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto"
           >
             {filtered.map((watch) => (
               <motion.div
@@ -166,54 +165,49 @@ export default function ProductsPage() {
                 onMouseEnter={() => setHoveredId(watch.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={() => setSelectedWatch(watch)}
-                className="group relative rounded-3xl overflow-hidden border border-[#636CCB]/10 hover:border-[#6E8CFB]/25 transition-all duration-700 cursor-pointer hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(110,140,251,0.15)]"
+                className="group relative rounded-[2rem] overflow-hidden border border-[#636CCB]/10 hover:border-[#6E8CFB]/30 transition-all duration-700 cursor-pointer hover:-translate-y-2 bg-[#3C467B]/20 backdrop-blur-sm"
               >
                 {/* Image Container */}
-                <div className="relative h-[360px] overflow-hidden bg-[#2E3665]">
+                <div className="relative h-[320px] sm:h-[360px] overflow-hidden bg-[#2E3665]">
                   <img
                     src={watch.image}
                     alt={watch.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E3665] via-[#2E3665]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E3665] via-transparent to-transparent opacity-60" />
                   
                   {/* Badge */}
                   {watch.badge && (
-                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
-                      watch.badge === 'Bestseller' ? 'bg-[#636CCB] text-[#E0E4FF]' :
-                      watch.badge === 'Limited' ? 'bg-[#6E8CFB] text-[#E0E4FF]' :
-                      watch.badge === 'New' ? 'bg-[#50589C] text-[#E0E4FF]' :
-                      'bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-[#E0E4FF]'
-                    }`}>
+                    <div className="absolute top-5 left-5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-[#E0E4FF] shadow-lg shadow-black/20">
                       {watch.badge}
                     </div>
                   )}
 
-                  {/* Quick view overlay */}
-                  <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${hoveredId === watch.id ? 'opacity-100' : 'opacity-0'}`}>
-                    <div className="px-6 py-3 rounded-full bg-[#3C467B]/80 backdrop-blur-md border border-[#636CCB]/20 flex items-center gap-2 text-[#E0E4FF] text-sm font-medium">
+                  {/* Quick view overlay - Visible on hover/touch */}
+                  <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 bg-black/20 backdrop-blur-[2px] ${hoveredId === watch.id ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                    <div className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center gap-2 text-white text-xs font-black uppercase tracking-widest shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       <Eye className="w-4 h-4" /> Quick View
                     </div>
                   </div>
                 </div>
 
                 {/* Info */}
-                <div className="p-6 bg-[#3C467B]/40 backdrop-blur-sm">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <p className="text-xs text-[#6E8CFB] uppercase tracking-wider font-medium mb-1">{watch.category}</p>
-                      <h3 className="text-xl font-semibold text-[#E0E4FF] group-hover:text-[#6E8CFB] transition-colors duration-300">{watch.name}</h3>
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <p className="text-[10px] text-[#6E8CFB] uppercase tracking-[0.2em] font-black mb-1.5">{watch.category}</p>
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#E0E4FF] group-hover:text-[#6E8CFB] transition-colors duration-300 leading-tight">{watch.name}</h3>
                     </div>
-                    <span className="text-lg font-semibold text-[#6E8CFB]">{watch.price}</span>
+                    <span className="text-base sm:text-lg font-black text-[#6E8CFB] ml-4 whitespace-nowrap">{watch.price}</span>
                   </div>
                   
-                  <p className="text-sm text-[#A8B0D8] mb-4 leading-relaxed">{watch.description}</p>
+                  <p className="text-sm text-[#A8B0D8] mb-6 leading-relaxed line-clamp-2">{watch.description}</p>
                   
                   {/* Specs */}
                   <div className="flex flex-wrap gap-2">
                     {watch.specs.map(spec => (
-                      <span key={spec} className="px-2.5 py-1 rounded-lg bg-[#2E3665]/60 border border-[#636CCB]/8 text-[10px] text-[#7A82B0] uppercase tracking-wider">
+                      <span key={spec} className="px-2.5 py-1.5 rounded-xl bg-[#2E3665]/40 border border-[#636CCB]/10 text-[9px] font-bold text-[#7A82B0] uppercase tracking-wider">
                         {spec}
                       </span>
                     ))}
@@ -225,81 +219,130 @@ export default function ProductsPage() {
 
           {/* Empty state */}
           {filtered.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-[#7A82B0] text-lg">No timepieces in this category yet.</p>
+            <div className="text-center py-24 glass-card rounded-[2.5rem] border border-[#636CCB]/10 max-w-2xl mx-auto">
+              <p className="text-[#A8B0D8] text-lg font-medium">No timepieces in this category currently available.</p>
             </div>
           )}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="w-full py-16 mb-12">
+      <section className="w-full py-16 sm:py-24 mb-12">
         <div className="container px-4 md:px-6 mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center glass-card rounded-3xl p-12 border border-[#636CCB]/12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#E0E4FF] mb-4">Interested in a Timepiece?</h2>
-            <p className="text-[#A8B0D8] mb-8 max-w-xl mx-auto">Contact us for pricing, availability, and custom orders. We also offer certified pre-owned exotic watches.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact" className="px-8 py-3 rounded-full btn-primary font-semibold inline-flex items-center justify-center gap-2">
-                Inquire Now <ArrowLeft className="w-4 h-4 rotate-180" />
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center glass-card rounded-[2.5rem] p-8 sm:p-16 border border-[#636CCB]/15 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#636CCB]/5 to-transparent -z-10 group-hover:opacity-100 transition-opacity opacity-50" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#E0E4FF] mb-6 tracking-tight">Interested in a<br className="sm:hidden"/> Timepiece?</h2>
+            <p className="text-base sm:text-xl text-[#A8B0D8] mb-10 max-w-2xl mx-auto leading-relaxed">Contact our concierge for private viewings, pricing, and custom order inquiries. We deliver globally with white-glove service.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/#contact" className="w-full sm:w-auto px-10 py-4 rounded-full btn-primary font-black flex items-center justify-center gap-3 text-lg shadow-2xl shadow-[#636CCB]/20">
+                Inquire Now <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/" className="px-8 py-3 rounded-full border border-[#636CCB]/25 text-[#E0E4FF] font-medium hover:bg-[#636CCB]/12 transition-colors inline-flex items-center justify-center">
+              <Link href="/" className="w-full sm:w-auto px-10 py-4 rounded-full border border-[#636CCB]/30 text-[#E0E4FF] font-bold hover:bg-[#636CCB]/15 transition-all text-lg">
                 Back to Home
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
+
       {/* Product Detail Modal */}
       <AnimatePresence>
         {selectedWatch && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={() => setSelectedWatch(null)}>
-            <div className="absolute inset-0 bg-[#2E3665]/80 backdrop-blur-sm" />
-            <motion.div initial={{ opacity: 0, scale: 0.9, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }} transition={{ type: "spring", stiffness: 80, damping: 20 }}
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-10" 
+            onClick={() => setSelectedWatch(null)}
+          >
+            <div className="absolute inset-0 bg-[#2E3665]/90 backdrop-blur-md" />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 40 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.95, y: 20 }} 
+              transition={{ type: "spring", stiffness: 100, damping: 25 }}
               onClick={e => e.stopPropagation()}
-              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#3C467B]/95 backdrop-blur-xl border border-[#636CCB]/15 shadow-[0_24px_80px_rgba(46,54,101,0.6)]">
+              className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#3C467B]/95 backdrop-blur-2xl border border-[#636CCB]/20 shadow-[0_32px_120px_rgba(0,0,0,0.5)] scrollbar-hide"
+            >
               {/* Close button */}
-              <button onClick={() => setSelectedWatch(null)} className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-[#2E3665]/80 border border-[#636CCB]/15 flex items-center justify-center text-[#A8B0D8] hover:text-[#E0E4FF] hover:border-[#6E8CFB]/30 transition-colors"><X className="w-5 h-5" /></button>
+              <button 
+                onClick={() => setSelectedWatch(null)} 
+                className="absolute top-6 right-6 z-20 w-12 h-12 rounded-full bg-[#2E3665]/80 border border-[#636CCB]/20 flex items-center justify-center text-[#A8B0D8] hover:text-[#E0E4FF] hover:border-[#6E8CFB]/50 transition-all backdrop-blur-md"
+              >
+                <X className="w-6 h-6" />
+              </button>
 
-              <div className="grid md:grid-cols-2 gap-0">
+              <div className="grid lg:grid-cols-2 gap-0">
                 {/* Image side */}
-                <div className="relative h-[350px] md:h-full md:min-h-[600px] overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
+                <div className="relative h-[300px] sm:h-[450px] lg:h-auto min-h-[400px] lg:min-h-[700px] overflow-hidden">
                   <img src={selectedWatch.image} alt={selectedWatch.name} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E3665]/60 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#3C467B]/30" />
-                  {selectedWatch.badge && (<div className="absolute top-5 left-5 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-xs font-semibold uppercase tracking-wider text-[#E0E4FF]">{selectedWatch.badge}</div>)}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E3665]/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#3C467B]/40" />
+                  {selectedWatch.badge && (
+                    <div className="absolute top-8 left-8 px-5 py-2 rounded-full bg-gradient-to-r from-[#636CCB] to-[#6E8CFB] text-[10px] font-black uppercase tracking-[0.2em] text-[#E0E4FF] shadow-2xl">
+                      {selectedWatch.badge}
+                    </div>
+                  )}
                 </div>
 
                 {/* Details side */}
-                <div className="p-8 md:p-10 flex flex-col">
-                  <p className="text-xs text-[#6E8CFB] uppercase tracking-wider font-medium mb-2">{selectedWatch.category}</p>
-                  <h2 className="text-3xl md:text-4xl font-semibold text-[#E0E4FF] mb-2">{selectedWatch.name}</h2>
-                  <p className="text-2xl font-semibold text-[#6E8CFB] mb-6">{selectedWatch.price}</p>
-                  <p className="text-[#A8B0D8] leading-relaxed mb-8">{selectedWatch.longDescription}</p>
-
-                  {/* Specs grid */}
-                  <div className="grid grid-cols-2 gap-3 mb-8">
-                    {[{icon: <Clock className="w-4 h-4" />, label: "Movement", val: selectedWatch.movement},{icon: <Shield className="w-4 h-4" />, label: "Case", val: selectedWatch.caseMaterial},{icon: <Gem className="w-4 h-4" />, label: "Crystal", val: selectedWatch.crystal},{icon: <Eye className="w-4 h-4" />, label: "Dial", val: selectedWatch.dialColor}].map((s,i) => (
-                      <div key={i} className="p-3 rounded-xl bg-[#2E3665]/50 border border-[#636CCB]/8">
-                        <div className="flex items-center gap-2 text-[#6E8CFB] mb-1">{s.icon}<span className="text-[10px] uppercase tracking-wider">{s.label}</span></div>
-                        <p className="text-sm text-[#E0E4FF] font-medium">{s.val}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-8">
-                    <h4 className="text-sm font-medium text-[#E0E4FF] mb-3 uppercase tracking-wider">Key Features</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedWatch.features.map(f => (<span key={f} className="px-3 py-1.5 rounded-lg bg-[#636CCB]/8 border border-[#636CCB]/10 text-xs text-[#A8B0D8]">{f}</span>))}
+                <div className="p-6 sm:p-10 lg:p-12 flex flex-col">
+                  <div className="mb-6">
+                    <p className="text-[10px] text-[#6E8CFB] uppercase tracking-[0.3em] font-black mb-2">{selectedWatch.category}</p>
+                    <h2 className="text-3xl sm:text-4xl font-black text-[#E0E4FF] mb-3 leading-tight tracking-tight">{selectedWatch.name}</h2>
+                    <div className="flex items-center gap-4">
+                      <p className="text-2xl font-black text-[#6E8CFB]">{selectedWatch.price}</p>
+                      <div className="px-2.5 py-1 rounded-lg bg-[#636CCB]/10 border border-[#636CCB]/20 text-[9px] text-[#6E8CFB] font-bold uppercase tracking-wider">In Stock</div>
                     </div>
                   </div>
 
-                  {/* Strap info */}
-                  <p className="text-xs text-[#7A82B0] mb-8">Strap: {selectedWatch.strapMaterial}</p>
+                  <div className="space-y-6 mb-8">
+                    <p className="text-[#A8B0D8] text-sm sm:text-base leading-relaxed opacity-90">{selectedWatch.longDescription}</p>
+
+                    {/* Specs grid */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        {icon: <Clock className="w-4 h-4" />, label: "Movement", val: selectedWatch.movement},
+                        {icon: <Shield className="w-4 h-4" />, label: "Case", val: selectedWatch.caseMaterial},
+                        {icon: <Gem className="w-4 h-4" />, label: "Crystal", val: selectedWatch.crystal},
+                        {icon: <Eye className="w-4 h-4" />, label: "Dial", val: selectedWatch.dialColor}
+                      ].map((s,i) => (
+                        <div key={i} className="p-4 rounded-xl bg-[#2E3665]/40 border border-[#636CCB]/10 group/spec hover:border-[#6E8CFB]/30 transition-colors">
+                          <div className="flex items-center gap-2 text-[#6E8CFB] mb-1 font-black uppercase tracking-widest text-[8px]">
+                            {s.icon}
+                            <span>{s.label}</span>
+                          </div>
+                          <p className="text-xs text-[#E0E4FF] font-bold truncate">{s.val}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Features */}
+                    <div>
+                      <h4 className="text-[9px] font-black text-[#E0E4FF] mb-3 uppercase tracking-[0.3em] opacity-50">Technical Features</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedWatch.features.map(f => (
+                          <span key={f} className="px-3 py-1.5 rounded-lg bg-[#636CCB]/10 border border-[#636CCB]/20 text-[10px] font-bold text-[#A8B0D8] hover:bg-[#636CCB]/20 hover:text-[#E0E4FF] transition-all cursor-default">
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <p className="text-[10px] text-[#7A82B0] font-medium tracking-wide border-t border-[#636CCB]/10 pt-6">
+                      <span className="uppercase tracking-widest mr-2 opacity-40">Strap:</span> {selectedWatch.strapMaterial}
+                    </p>
+                  </div>
 
                   {/* CTA */}
-                  <div className="mt-auto flex gap-3">
-                    <Link href="/#contact" className="flex-1 py-3 rounded-full btn-primary font-semibold flex items-center justify-center gap-2 text-sm">Inquire About This Piece <ArrowRight className="w-4 h-4" /></Link>
+                  <div className="mt-auto">
+                    <Link 
+                      href="/#contact" 
+                      onClick={() => setSelectedWatch(null)}
+                      className="w-full py-4 rounded-full btn-primary font-black flex items-center justify-center gap-3 text-sm shadow-2xl shadow-[#636CCB]/20"
+                    >
+                      Inquire About This Piece <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/custom-cursor";
 import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,8 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-[#2E3665] text-[#A8B0D8] min-h-screen selection:bg-[#6E8CFB]/30 selection:text-[#E0E4FF]`}>
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.className} bg-[#2E3665] text-[#A8B0D8] min-h-screen selection:bg-[#6E8CFB]/30 selection:text-[#E0E4FF] md:cursor-none`}>
+        <CustomCursor />
         <Navbar />
         {children}
       </body>
