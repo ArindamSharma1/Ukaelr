@@ -16,6 +16,10 @@
     --foreground: 210 40% 98%;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: linear-gradient(135deg, #020b22 0%, #001a4d 100%);
     background-attachment: fixed;
