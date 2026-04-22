@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Factory } from "lucide-react"
 
 export default function Hero() {
   return (
@@ -15,17 +15,17 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8"
         >
-          <Sparkles className="w-4 h-4 text-cyan-400" />
-          <span>Multilingual Chat Now Live • <span className="text-white hover:underline cursor-pointer">Get Early Acces <ArrowRight className="inline w-3 h-3" /></span></span>
+          <Factory className="w-4 h-4 text-cyan-400" />
+          <span>Engineering Excellence • <span className="text-white hover:underline cursor-pointer">Explore Our Work <ArrowRight className="inline w-3 h-3" /></span></span>
         </motion.div>
 
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-semibold tracking-tight max-w-4xl mb-6"
+          className="text-5xl md:text-7xl font-semibold tracking-tight max-w-5xl mb-6"
         >
-          Always-On AI Support for a <br className="hidden md:block"/> Global Customer Base
+          Building India&apos;s Industrial <br className="hidden md:block"/>Future, One Venture at a Time
         </motion.h1>
 
         <motion.p 
@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10"
         >
-          Ukaelr is a global chat assistant that keeps your business in orbit with seamless communication, instant responses, and smarter support across 30+ languages.
+          Ukaelr (OPC) Private Limited specializes in plant machinery, industrial infrastructure, scientific research, and intellectual property — powering enterprises with precision engineering and strategic innovation.
         </motion.p>
 
         <motion.div 
@@ -44,42 +44,30 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           <button className="px-8 py-3 rounded-full border border-blue-500/30 hover:bg-blue-500/10 transition-all text-white font-medium w-full sm:w-auto">
-            Book a Demo
+            Our Services
           </button>
           <button className="px-8 py-3 rounded-full btn-primary text-white font-semibold flex items-center gap-2 w-full sm:w-auto justify-center">
-            Get Started Free <ArrowRight className="w-4 h-4" />
+            Contact Us <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>
       </div>
 
 
 
-      {/* Logos section - overlapping the dark fade from the globe */}
+      {/* Industry verticals */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
         className="absolute bottom-10 w-full flex flex-col items-center z-20"
       >
-        <p className="text-sm text-gray-400 mb-6">Trusted by 500+ Global Teams.</p>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale">
-          {/* using text instead of svg to save space but representing logos */}
-          <div className="text-xl font-bold font-sans tracking-tighter">ATLASSIAN</div>
-          <div className="text-xl font-semibold flex items-center gap-2">
-            <div className="w-4 h-4 grid grid-cols-2 gap-[2px]">
-              <div className="bg-white"></div><div className="bg-white"></div>
-              <div className="bg-white"></div><div className="bg-white"></div>
-            </div>
-            Microsoft
-          </div>
-          <div className="text-xl font-bold flex items-center gap-1">
-            <span className="w-5 h-5 flex items-center justify-center border border-white rounded-sm text-xs border-dashed">N</span>
-            Notion
-          </div>
-          <div className="text-xl font-bold italic">shopify</div>
-          <div className="text-xl font-bold flex items-center gap-1">
-            <span className="w-4 h-4">#</span> slack
-          </div>
+        <p className="text-sm text-gray-400 mb-6">Core Industrial Verticals</p>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-70">
+          <div className="text-sm font-medium tracking-wider uppercase text-gray-300 px-4 py-2 rounded-full border border-white/10 bg-white/5">Plant Machinery</div>
+          <div className="text-sm font-medium tracking-wider uppercase text-gray-300 px-4 py-2 rounded-full border border-white/10 bg-white/5">Infrastructure</div>
+          <div className="text-sm font-medium tracking-wider uppercase text-gray-300 px-4 py-2 rounded-full border border-white/10 bg-white/5">R&D</div>
+          <div className="text-sm font-medium tracking-wider uppercase text-gray-300 px-4 py-2 rounded-full border border-white/10 bg-white/5">Patents & IP</div>
+          <div className="text-sm font-medium tracking-wider uppercase text-gray-300 px-4 py-2 rounded-full border border-white/10 bg-white/5">Factory Management</div>
         </div>
       </motion.div>
     </section>

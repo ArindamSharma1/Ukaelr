@@ -6,8 +6,8 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ukaelr | Premium Global AI Solutions",
-  description: "Ukaelr provides intelligent, seamless communication, instant responses, and smarter support across 30+ languages.",
+  title: "Ukaelr | Industrial Engineering & Innovation",
+  description: "Ukaelr (OPC) Private Limited — Engineering excellence in plant machinery, industrial infrastructure, scientific research, and intellectual property solutions. Building India's industrial future.",
 };
 
 export default function RootLayout({

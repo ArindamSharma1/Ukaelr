@@ -1,23 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Zap, Globe, TrendingUp } from "lucide-react"
+import { Wrench, Building2, FlaskConical } from "lucide-react"
 
-const benefits = [
+const coreBusiness = [
   {
-    icon: <Zap className="w-6 h-6 text-white" />,
-    title: "Instant Response. Every Time.",
-    description: "Customers get answers in seconds, not hours. No more lost conversations. No more missed opportunities."
+    icon: <Wrench className="w-6 h-6 text-white" />,
+    title: "Plant Machinery & Equipment",
+    description: "Import, purchase, exchange, alter, and improve all kinds of plant machinery, apparatus, tools and equipment necessary for carrying on the main business operations."
   },
   {
-    icon: <Globe className="w-6 h-6 text-white" />,
-    title: "Support That Speaks Every Language.",
-    description: "Customers get answers in seconds, not hours. No more lost conversations. No more missed opportunities."
+    icon: <Building2 className="w-6 h-6 text-white" />,
+    title: "Industrial Infrastructure",
+    description: "Build, equip, maintain, and manage factories, plants, warehouses, workshops, offices, electric works, and all kinds of industrial facilities and conveniences."
   },
   {
-    icon: <TrendingUp className="w-6 h-6 text-white" />,
-    title: "Scale Without Breaking Your Team.",
-    description: "Automate 80% of routine conversations. Free your team to handle complex issues. That's intelligent scaling."
+    icon: <FlaskConical className="w-6 h-6 text-white" />,
+    title: "Scientific Research & Innovation",
+    description: "Undertake and promote scientific research relating to the company's core business, driving innovation and technological advancement in industrial processes."
   }
 ]
 
@@ -41,7 +41,7 @@ const itemVariants = {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="w-full py-24 relative z-10">
+    <section id="about" className="w-full py-24 relative z-10">
       <div className="container px-4 md:px-6 mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -51,13 +51,13 @@ export default function Benefits() {
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="px-4 py-1 rounded-full border border-blue-400/20 bg-blue-500/10 text-xs text-blue-200 mb-6 uppercase tracking-wider">
-            Why Ukaelr?
+            What We Do
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-6">
-            Never Lose a Customer to Communication Again
+            Engineering the Backbone of Industry
           </h2>
           <p className="text-gray-300 max-w-2xl text-lg">
-            Three reasons why global teams choose Ukaelr over traditional support.
+            Three pillars that define Ukaelr&apos;s core business operations — from heavy machinery to cutting-edge research.
           </p>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function Benefits() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
-          {benefits.map((benefit, i) => (
+          {coreBusiness.map((item, i) => (
             <motion.div
               variants={itemVariants}
               key={i}
@@ -77,13 +77,13 @@ export default function Benefits() {
               <div className="w-16 h-16 rounded-2xl mb-8 flex items-center justify-center bg-[#021338] border border-white/10 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/40 to-blue-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md" />
                 <div className="absolute inset-[1px] rounded-[15px] bg-[#021338] flex items-center justify-center z-10 transition-colors duration-300 group-hover:bg-[#021338]/80">
-                   {benefit.icon}
+                   {item.icon}
                 </div>
                 {/* Glow border effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 opacity-40 z-0" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white tracking-wide">{benefit.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-white tracking-wide">{item.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>

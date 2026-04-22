@@ -3,10 +3,10 @@
 import { motion } from "framer-motion"
 
 const metrics = [
-  { value: "+40%", label: "Faster Response Time" },
-  { value: "+25%", label: "Customer Satisfaction" },
-  { value: "80%", label: "Automation Rate" },
-  { value: "5x", label: "Team Productivity" }
+  { value: "9+", label: "Industrial Verticals" },
+  { value: "360°", label: "Plant Lifecycle Coverage" },
+  { value: "IN & Global", label: "Branch Network" },
+  { value: "∞", label: "Innovation Commitment" }
 ]
 
 const containerVariants = {
@@ -39,13 +39,13 @@ export default function Metrics() {
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="px-4 py-1 rounded-full border border-blue-400/20 bg-blue-500/10 text-xs text-blue-200 mb-6 uppercase tracking-wider">
-            Why It Works
+            At a Glance
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-6">
-            Why Global Brands Trust Ukaelr
+            The Ukaelr Advantage
           </h2>
           <p className="text-gray-300 max-w-2xl text-lg">
-            Real results. Real impact. Real growth.
+            Depth of capability. Breadth of ambition. Built to scale.
           </p>
         </motion.div>
 
